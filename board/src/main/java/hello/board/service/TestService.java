@@ -1,6 +1,6 @@
 package hello.board.service;
 
-import hello.board.domain.Test;
+import hello.board.dao.Test;
 import hello.board.mapper.TestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

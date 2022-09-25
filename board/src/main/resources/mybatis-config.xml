@@ -13,6 +13,6 @@
     </properties>
 
     <typeAliases>
-        <package name="hello.board.domain" />
+        <package name="hello.board.dao" />
     </typeAliases>
 </configuration>

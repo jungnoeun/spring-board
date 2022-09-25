@@ -1,12 +1,13 @@
-package hello.board.domain;
+package hello.board.dao;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class Test {
-    // 테스트 주석 추가
+@ToString
+public class Board {
     private int bno;
     private String title;
     private String content;

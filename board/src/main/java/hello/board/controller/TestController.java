@@ -1,6 +1,6 @@
 package hello.board.controller;
 
-import hello.board.domain.Test;
+import hello.board.dao.Test;
 import hello.board.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>게시물 조회</title>
+</head>
+<body>
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>게시물 목록</h2>
+    </div>
+
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list : ${lists}">
+                <td th:text="${list.bno}"><a href="post.html">1</a></td>
+                <td th:text="${list.title}"><a href="post.html">제목1</a></td>
+                <td th:text="${list.userid}">love</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div> <!-- /container -->
+</body>
+</html>

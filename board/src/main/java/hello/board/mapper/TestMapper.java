@@ -1,6 +1,6 @@
 package hello.board.mapper;
 
-import hello.board.domain.Test;
+import hello.board.dao.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Component;
 

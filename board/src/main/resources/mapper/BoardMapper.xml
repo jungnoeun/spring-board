@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hello.board.mapper.BoardMapper">
+
+    <!-- id는 Mapper Interface 클래스에서 선언한 메서드의 이름과 동일하게 맞춰준다. -->
+    <select id="selectPosts" resultType="Board">
+        SELECT * FROM ${tblBoard}
+    </select>
+
+</mapper>
