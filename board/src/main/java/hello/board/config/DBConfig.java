@@ -22,8 +22,13 @@ import javax.sql.DataSource;
 // MyBatis와 HikariCP 연동을 위한 설정 클래스
 public class DBConfig {
 
+
+    private final ApplicationContext applicationContext;
+
     @Autowired
-    private ApplicationContext applicationContext;
+    DBConfig(ApplicationContext applicationContext){
+        this.applicationContext = applicationContext;
+    }
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.hikari")
@@ -44,11 +49,11 @@ public class DBConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
         // DB(Mysql)에서 읽어온 데이터를 담아올 도메인(DTO)의 패키지 경로를 설정 -> Mapper 파일에 편하게 클래스 명만 작성해서 사용
-        sqlSessionFactoryBean.setTypeAliasesPackage("hello.board.domain");
+        sqlSessionFactoryBean.setTypeAliasesPackage("hello.board.dao");
         // 쿼리를 작성할 mapper 파일을 생성해 둘 경로(resources/mapper) -> 해당 경로에. xml로 끝나는 파일들을 스캔해서 설정
         sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:/mapper/*.xml"));
         // ---------sql 관리설정, sql문을 정의한 문서 추가----------
-        sqlSessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
+        //sqlSessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:/mybatis-config.xml"));
         // ------ 추가 끝 ------------
         return sqlSessionFactoryBean.getObject();
     }

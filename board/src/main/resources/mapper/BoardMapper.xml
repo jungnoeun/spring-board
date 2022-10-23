@@ -3,8 +3,10 @@
 <mapper namespace="hello.board.mapper.BoardMapper">
 
     <!-- id는 Mapper Interface 클래스에서 선언한 메서드의 이름과 동일하게 맞춰준다. -->
-    <select id="selectPosts" resultType="Board">
-        SELECT * FROM ${tblBoard}
+    <select id="selectPosts"  resultType="Board">
+
+        SELECT * FROM test_board
+
     </select>
 
 </mapper>

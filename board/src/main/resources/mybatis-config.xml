@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+<!--
     <properties>
         <property name="tblBoard" value="test_board" />
         <property name="colBno" value="bno" />
@@ -12,7 +13,10 @@
         <property name="colUserid" value="userid" />
     </properties>
 
+
     <typeAliases>
         <package name="hello.board.dao" />
     </typeAliases>
+-->
+
 </configuration>
