@@ -12,4 +12,5 @@ public interface BoardMapper {
     // 게시물 조회
     List<Board> selectPosts() throws Exception;
 
+    Board selectPost(int bno) ;
 }

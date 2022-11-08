@@ -21,17 +21,25 @@
                 <th>작성자</th>
             </tr>
             </thead>
+
+            <!--            추가-->
             <tbody>
             <tr th:each="list : ${lists}">
-                <td th:text="${list.bno}"><a href="post.html">1</a></td>
-                <td th:text="${list.title}"><a href="post.html">제목1</a></td>
-                <td th:text="${list.userid}">love</td>
+                <td><a href="post.html" th:href="@{/boards/posts/{bno} (bno=${list.bno})}" th:text="${list.bno}">bno</a></td>
+                <td><a href="item.html" th:href="@{|/boards/posts/${list.bno}|}" th:text="${list.title}">title</a></td>
+                <td th:text="${list.userid}">userid</td>
             </tr>
             </tbody>
+
+            <!--            추가-->
+
         </table>
     </div>
 
+    <div><a th:href="@{/posts/{url}(url=${urlTest})}"> url 테스트</a></div>
 
-</div> <!-- /container -->
+
+</div>
+
 </body>
 </html>

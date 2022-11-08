@@ -19,4 +19,10 @@ public class BoardService {
         return list;
     }
 
+    public Board selectPost(int bno) {
+        Board oneBoard = boardMapper.selectPost(bno);
+        return oneBoard;
+    }
+
+
 }

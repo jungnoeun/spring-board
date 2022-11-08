@@ -9,4 +9,10 @@
 
     </select>
 
+    <select id="selectPost" parameterType="int" resultType="Board">
+        SELECT * FROM test_board
+        WHERE bno=#{bno}
+    </select>
+
+
 </mapper>
