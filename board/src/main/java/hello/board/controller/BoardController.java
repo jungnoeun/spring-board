@@ -43,7 +43,7 @@ public class BoardController {
         //Board oneBoard = boardService.selectPost(bno);
         //return oneBoard;
         //System.out.println(bno);
-        //model.addAttribute("oneBoard",boardService.selectPost(bno));
+        model.addAttribute("oneBoard",boardService.selectPost(bno));
         return "boards/post";
     }
 

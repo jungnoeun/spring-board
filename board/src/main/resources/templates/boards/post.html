@@ -7,8 +7,25 @@
 </head>
 <body>
 게시물 보기
+<div class="container">
+    <div>
+        글 번호:
+        <span th:text="${oneBoard.bno}">번호</span>
+    </div>
+    <div>
+        글 제목:
+        <span th:text="${oneBoard.title}">번호</span>
+    </div>
+    <div>
+        글 내용:
+        <span th:text="${oneBoard.content}">번호</span>
+    </div>
+    <div>
+        유저 아이디:
+        <span th:text="${oneBoard.userid}">번호</span>
+    </div>
 
-
+</div>
 
 </body>
 </html>
