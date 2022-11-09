@@ -14,19 +14,66 @@
     </div>
     <div>
         글 제목:
-        <span th:text="${oneBoard.title}">번호</span>
+        <span th:text="${oneBoard.title}">제목</span>
     </div>
     <div>
         글 내용:
-        <span th:text="${oneBoard.content}">번호</span>
+        <span th:text="${oneBoard.content}">내용</span>
     </div>
     <div>
         유저 아이디:
-        <span th:text="${oneBoard.userid}">번호</span>
+        <span th:text="${oneBoard.userid}">아이디</span>
+    </div>
+
+    <div>
+        <button id="butWithFun" class="btn" type="button">내용 조회</button>
+        <div id="ajaxwriteContent">글 정보 출력</div>
     </div>
 
 </div>
 
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js">
+
+    function loadContent() {
+        $.ajax({
+            url: "/boards/posts/{bno}/detail",
+            type: "get",
+            dataType: "json",
+        }).done(function (result){
+            var html="<div class='ajaxBlock'>";
+            html+="<span>내용</span>";
+            html+="</div>";
+
+            $("#ajaxwriteContent").html(html);
+        });
+
+    };
+
+    /*let butWithFun = document.querySelector(".butWithFun");
+    butWithFun.addEventListener("click", function() {
+        alert("버튼 작동");
+    });*/
+
+
+
+    window.onload = function() {
+        let butWithFun = document.querySelector("#butWithFun");
+
+        if(butWithFun) {
+            butWithFun.addEventListener("click", myFunction);
+        }
+
+        function myFunction() {
+            alert("버튼 작동");
+        }
+    }
+
+</script>
+
+
 </body>
+
 </html>
 

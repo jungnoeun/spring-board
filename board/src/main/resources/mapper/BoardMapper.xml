@@ -14,5 +14,9 @@
         WHERE bno=#{bno}
     </select>
 
+    <select id="selectPostContent" parameterType="int" resultType="String">
+        SELECT content FROM test_board
+        WHERE bno=#{bno}
+    </select>
 
 </mapper>

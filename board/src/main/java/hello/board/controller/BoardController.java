@@ -7,10 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -28,6 +25,7 @@ public class BoardController {
         this.boardService = boardService;
     }
 
+    // 전체 post(Board) 조회하기
     @GetMapping("/posts")
     public String selectPosts(Model model) throws Exception {
         //List<Board> list = boardService.selectPosts();
@@ -37,7 +35,7 @@ public class BoardController {
         return "boards/posts";
     }
 
-
+    // 특정 post(Board) 조회하기
     @GetMapping("/posts/{bno}")
     public String selectPost(@PathVariable int bno, Model model) {
         //Board oneBoard = boardService.selectPost(bno);
@@ -47,12 +45,19 @@ public class BoardController {
         return "boards/post";
     }
 
-    /*@ResponseBody
-    @GetMapping("/posts/${bno}/all")
-    public Board selectPostAll(@PathVariable int bno) {
-        Board oneBoard = boardService.selectPost(bno);
-        return oneBoard;
-    }*/
+    // Board 리스트중에 특정 Board객체의 content의 값을 가져오기 -----> 미해결
+    @ResponseBody
+    @GetMapping("/posts/{bno}/detail")
+    public String selectPostAll(@PathVariable int bno) {
+        String postContent = boardService.selectPostContent(bno);
+        return postContent;
+    }
+
+    // 새로운 post(Board) 추가하기
+    @GetMapping("/posts/newpost")
+    public String addOnePost() {
+        return "boards/addForm";
+    }
 
 
     void printLists(List<Board> lists) {

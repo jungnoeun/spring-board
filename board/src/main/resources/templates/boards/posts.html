@@ -38,8 +38,17 @@
 
     <div><a th:href="@{/posts/{url}(url=${urlTest})}"> url 테스트</a></div>
 
+    <br>
+    <div>
+        <button onclick="location.href='addForm.html'"
+                th:onclick="|location.href='@{/boards/posts/newpost}'|" type="button">글 추가하기</button>
+    </div>
+
+    <div></div>
 
 </div>
+
+
 
 </body>
 </html>

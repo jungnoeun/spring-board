@@ -24,5 +24,9 @@ public class BoardService {
         return oneBoard;
     }
 
+    public String selectPostContent(int bno) {
+        String postContent = boardMapper.selectPostContent(bno);
+        return postContent;
+    }
 
 }
